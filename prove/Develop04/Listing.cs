@@ -27,7 +27,7 @@ class Listing : Activity
     public void ShowPrompt()
     {
         Random random= new Random();
-        string prompt=_prompts[random.Next(_prompts.Count())];
+        string prompt=_prompts[random.Next(_prompts.Count)];
         Console.WriteLine("list as many answer as you can in the ammount of time that you have");
         Console.WriteLine(prompt);
         Console.WriteLine ("you may begin");

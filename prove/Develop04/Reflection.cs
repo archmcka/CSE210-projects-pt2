@@ -49,7 +49,7 @@ class Reflection : Activity
         string prompt = _events[random.Next(_events.Count())];
         _events.Remove(prompt);
         Console.WriteLine("consider the following prompt: ");
-        Console.WriteLine({prompt});
+        Console.WriteLine(prompt);
     }
     public void DisplayPrompt()
     {

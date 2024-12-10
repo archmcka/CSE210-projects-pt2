@@ -1,5 +1,4 @@
-using System
-
+using System;
 using System.Diagnostics;
 
 class Activity
@@ -14,12 +13,12 @@ class Activity
    }
    public int GetDuration()
    {
-        Console.WriteLine("how long would you like the program to fun for?");
+        Console.WriteLine("how long would you like the program to fun for? (seconds)");
         return int.Parse(Console.ReadLine());
    }
    public string GetStartingMessage()
    {
-        Console.WriteLine("are you ready to start the program ");
+        Console.WriteLine("are you ready to start the program(yes or no) ");
         string starting_message=Console.ReadLine();
         return starting_message;
    }
@@ -46,7 +45,7 @@ class Activity
             for(int i = duration; i > 0; i--)
             {
                 Console.Write(i);
-                Thread.Sleep(5000);//pause function 
+                Thread.Sleep(1000);//pause function 
                 Console.Write("\b \b");//annimation funciton
             }
         }
