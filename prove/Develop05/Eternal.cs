@@ -10,6 +10,7 @@ public class Eternal : Goal
         _description = description;
         _pointValue = points;
         _completeCount=0;
+         _checkBox = "[ ]"; 
     }
     public override Goal PromptGoalInfo()
     {
@@ -33,4 +34,11 @@ public class Eternal : Goal
     {
         _completeCount=count;
     }
+    public override void CompleteGoal()
+{
+    // Eternal goals can be completed multiple times
+    _completeCount++;
+    _checkBox = "[X]"; // Mark as completed
+    Console.WriteLine($"Goal '{_name}' completed! You earned {_pointValue} points.");
+}
 }

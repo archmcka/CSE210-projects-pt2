@@ -2,43 +2,43 @@ using System.Configuration.Assemblies;
 
 public class GoalTracker
 {
-    private string userName;
+    private string _userName;
     private List<Goal> goals = new List<Goal>();
 
     private int points=0;
 
-    public int GetPoints()
-    {
-        return points;
-    }public void promptSave()
-    {
-        Console.WriteLine("what file would you liek to save your goals to?");
-        string fileName= Console.ReadLine();
-        SaveGoals(fileName);
-    }
-    public void SaveGoals(string fileName)
-    {
-        using(StreamWriter outputFile = new StreamWriter(fileName, append : true))
-        {
-            outputFile.WriteLine($"{userName}");
-            outputFile.WriteLine($"{points}");
-            foreach(Goal goal in goals)
-            {
-                switch (goal.GetGoalType())
-                {
-                     case "Simple":
-                        outputFile.WriteLine($"{goal.GetGoalType()}|{goal.GetName()}|{goal.GetDescription()}|{goal.GetPointValue()}|{goal.GetCompletionStatus()}");
-                        break;
-                    case "Eternal":
-                        outputFile.WriteLine($"{goal.GetGoalType()}|{goal.GetName()}|{goal.GetDescription()}|{goal.GetPointValue()}|{goal.GetCompletionCount()}|{goal.GetCompletionStatus()}");
-                        break;
-                    case "Checklist":
-                        outputFile.WriteLine($"{goal.GetGoalType()}|{goal.GetName()}|{goal.GetDescription()}|{goal.GetPointValue()}|{goal.GetCompletionCount()}|{goal.GetCompletionGoal()}|{goal.GetBonus()}|{goal.GetCompletionStatus()}");
-                        break;
-                }
-            }
-        }
-    }
+    // public int GetPoints()
+    // {
+    //     return points;
+    // }public void promptSave()
+    // {
+    //     Console.WriteLine("what file would you liek to save your goals to?");
+    //     string fileName= Console.ReadLine();
+    //     SaveGoals(fileName);
+    // }
+    // public void SaveGoals(string fileName)
+    // {
+    //     using(StreamWriter outputFile = new StreamWriter(fileName, append : true))
+    //     {
+    //         outputFile.WriteLine($"{_userName}");
+    //         outputFile.WriteLine($"{points}");
+    //         foreach(Goal goal in goals)
+    //         {
+    //             switch (goal.GetGoalType())
+    //             {
+    //                  case "Simple":
+    //                     outputFile.WriteLine($"{goal.GetGoalType()}|{goal.GetName()}|{goal.GetDescription()}|{goal.GetpointValue()}|{goal.GetComplete()}");
+    //                     break;
+    //                 case "Eternal":
+    //                     outputFile.WriteLine($"{goal.GetGoalType()}|{goal.GetName()}|{goal.GetDescription()}|{goal.GetpointValue()}|{goal.GetCompleteCount()}|{goal.GetCompletionStatus()}");
+    //                     break;
+    //                 case "Checklist":
+    //                     outputFile.WriteLine($"{goal.GetGoalType()}|{goal.GetName()}|{goal.GetDescription()}|{goal.GetpointValue()}|{goal.GetCompletionCount()}|{goal.GetCompletionGoal()}|{goal.GetCompletionStatus()}");
+    //                     break;
+    //             }
+    //         }
+    //     }
+    // }
     public void DisplayGoals()
     {
         for (int i = 0; i < goals.Count; i++)
@@ -69,7 +69,7 @@ public class GoalTracker
                 points += selectedGoal.GetpointValue();
                 break;
         }
-        Console.WriteLine($"Congratulations! You have earned {selectedGoal.GetPointValue()} points!");
+        Console.WriteLine($"Congratulations! You have earned points!");
         Console.WriteLine($"You now have {points} points.");
     }
 
