@@ -17,7 +17,7 @@ class Video
     }
     public void AddComment(Comment comment)
     {
-        _comments.Add(comment);
+        _comments.Add(comment); 
     }
     public int GetCommentCount()
     {
@@ -27,5 +27,16 @@ class Video
     {
         return _comments;
     }
-   
+   public string GetTitle()
+   {
+    return _title;
+   }
+   public string GetAuthor()
+   {
+    return _author;
+   }
+   public int GetLength()
+   {
+    return _length;
+   }
 }  

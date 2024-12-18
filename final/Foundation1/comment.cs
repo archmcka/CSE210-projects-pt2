@@ -5,6 +5,14 @@ class Comment
     public Comment(string commenterText, string commentAuthor)
     {
         _commenterText = commenterText;
-        _commentAuthor = commentAuthor;
+        _commentAuthor = commentAuthor; 
+    }
+    public string GetAuthor()
+    {
+        return _commentAuthor;
+    }
+    public string GetText()
+    {
+        return _commenterText;
     }
 }
