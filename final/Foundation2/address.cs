@@ -4,9 +4,9 @@ class Address
     private string _street;
     private string _city;
     private string _state;
-    private string _country;
+    private bool _country;
 
-    public Address(string street, string city, string state, string country)
+    public Address(string street, string city, string state, bool country)
     {
         _street = street;
         _city = city;
@@ -16,8 +16,9 @@ class Address
 
     public bool USA()
     {
-        return _country == 1;
+       return _country;
     }
+    
     public string GetAddress()
     {
         return $"{_street}, {_city}, {_state}, {_country}";

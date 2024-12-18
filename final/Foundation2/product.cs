@@ -12,6 +12,12 @@ class Product
         _price = price;
         _quantity = quantity;
     }   
+/*************  ✨ Codeium Command ⭐  *************/
+    /// <summary>
+    /// Gets the product ID.
+    /// </summary>
+    /// <returns>The product ID.</returns>
+/******  ad4eb58e-5128-47f9-ad80-6b712d51cf8a  *******/
     public string GetProductID()
     {
         return _productID;
@@ -20,11 +26,9 @@ class Product
     {
         return _name;
     }
-    public decimal GetTotalCost()
+        public decimal TotalCost()
     {
-        int TotalCost = _price * _quantity;
-        return TotalCost;
+         decimal totalCost = _price * _quantity;
+        return totalCost;
     }
-
-    
 }

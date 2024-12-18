@@ -5,8 +5,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Address address1= new Address("2665 sagebrush ave", "iona","ID","USA");
-        Address address2= new Address("1234 glock st", "Ammon","ID","USA");
+        Address address1= new Address("2665 sagebrush ave", "iona","ID",true);
+        Address address2= new Address("1234 glock st", "Ammon","ID",true);
 
         Customer customer1= new Customer("Ashlynn Archibald",address1);
         Customer customer2= new Customer("David Andrus",address2);

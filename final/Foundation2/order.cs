@@ -23,7 +23,7 @@ class Order
             productTotal += product.TotalCost();
         }
 
-        int shippingCost;
+        decimal shippingCost;
         if (_customer.USA())
         {
             shippingCost = _ShippingCostUSA;
@@ -32,17 +32,31 @@ class Order
         {
             shippingCost = _shippingCostOther;
         }
-        return ProductTotal + shippingCost;
+        return productTotal + shippingCost;
     }
 
-    public string GetPackingLabel()
+    // public string GetPackingLabel()
+    // {
+    //     String label += Product.GetName()+"(ID:"+Product.GetProductID()+")\n";
+    //     return label;
+    // }
+public string GetPackingLabel()
+{
+    string label = "";
+    foreach (Product product in _products)
     {
-        label += product.GetName()+"(ID:"+product.GetID()+")\n";
-        return label;
+        label += product.GetName() + " (ID:" + product.GetProductID() + ")\n";
     }
+    return label;
+}
+    // public string GetShippingLabel()
+    // {
+    //     string label = ($"shipping label:\n {orderCustomer.GetName()}");
+    //     return label;
+    // }
     public string GetShippingLabel()
-    {
-        string label = ($"shipping label:\n {orderCustomer.GetName()}");
-        return label;
-    }
+{
+    string label = $"Shipping Label:\n{_customer.GetName()}\n{_customer.GetAddress()}";
+    return label;
+}
 }
