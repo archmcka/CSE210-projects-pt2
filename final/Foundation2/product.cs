@@ -12,12 +12,10 @@ class Product
         _price = price;
         _quantity = quantity;
     }   
-/*************  ✨ Codeium Command ⭐  *************/
     /// <summary>
     /// Gets the product ID.
     /// </summary>
     /// <returns>The product ID.</returns>
-/******  ad4eb58e-5128-47f9-ad80-6b712d51cf8a  *******/
     public string GetProductID()
     {
         return _productID;
